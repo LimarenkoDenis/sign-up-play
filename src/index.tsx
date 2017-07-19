@@ -1,40 +1,75 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import { createStore, Store } from 'redux';
+
+import { rootReducer } from './reducers';
+
 
 // tslint:disable-next-line
-const Widget: (props: { update: React.EventHandler<React.ChangeEvent<HTMLInputElement>>, text: string }) => JSX.Element
-    = (props: { update: React.EventHandler<React.ChangeEvent<HTMLInputElement>>, text: string }) => (
-        <div>
-            <input type='text' onChange={props.update} />
-            <h1>{props.text}</h1>
-        </div>
-    );
+const store: Store<any> = createStore(rootReducer, {});
 
-class App extends React.Component<{ text: string, cat: number }, { text: string }> {
+// tslint:disable-next-line
+
+
+import { Info } from './sign-up/info/info';
+import { Gender } from './sign-up/gender/gender';
+import { Resident } from './sign-up/resident/resident';
+import { Result } from './sign-up/result/result';
+
+
+class App extends React.Component<{}, { currentView: number }> {
 
 
     public constructor() {
         super();
-        this.state = { text: 's' };
+        // tslint:disable-next-line
+        this.state = { currentView: 0 }
+        store.subscribe(() =>
+            this.setState({ currentView: store.getState().viewReducer.viewIndex }));
     }
 
-    public update(e: React.ChangeEvent<HTMLInputElement>): void {
-        this.setState({
-            text: e.target.value
+    public update(e: React.ChangeEvent<HTMLSelectElement>): void {
+        console.log(e);
+    }
+
+    public changeView(): void {
+        store.dispatch({
+            type: 'NEXT_VIEW'
         });
     }
 
     public render(): JSX.Element {
+        let view: JSX.Element;
+        switch (this.state.currentView) {
+            case 1:
+                view = <Info update={this.update.bind(this)} items={['1', '2', '3', '4', '5']} />;
+                break;
+            case 2:
+                view = <Gender />;
+                break;
+            case 3:
+                view = <Resident />;
+                break;
+            case 4:
+                view = <Result />;
+                break;
+            default:
+                view = <Info update={this.update.bind(this)} items={['1', '2', '3', '4', '5']} />;
+        }
+        const button: JSX.Element = <button onClick={this.changeView.bind(this)} > Next View  </button>;
         return (
-            <Widget update={this.update.bind(this)} text={this.state.text} />
-        ); // React.createElement('h1', {}, 'Hello Series 111');
+            <Provider store={store}>
+                <div>
+                    {view}
+                    {this.state.currentView < 4 ? button : ''}
+                </div>
+            </Provider>
+        );
     }
 }
 
-// tslint:disable-next-line
-// const App: () => JSX.Element = () => <h1>Hello Series</h1>;
-
 ReactDOM.render(
-    <App text='Hello Series' cat={1} />,
+    <App />,
     document.querySelector('#root')
 );
