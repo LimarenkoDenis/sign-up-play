@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { Title } from '../title/title';
-import { NextButton } from '../next-button/next-button';
 
 // tslint:disable-next-line
 export const Gender = (props: { update: React.EventHandler<any> }) => {
@@ -33,7 +32,6 @@ export const Gender = (props: { update: React.EventHandler<any> }) => {
                     Female
                     </label>
             </div>
-            <NextButton />
         </div>
     );
 };

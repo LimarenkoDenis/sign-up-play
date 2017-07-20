@@ -1,13 +1,31 @@
-.next-button{
- text-align: center;
+.next-button {
+  text-align: center;
 }
-.next-button span{
-    width: 45px;
-    height: 45px;
-    display: inline-block;
-    background-color: #DDDDDD;
-    border-radius: 50%;
-    color: #fff;
-    padding-top: 11px;
-    padding-left: 2px;
+
+.next-button button {
+  width: 45px;
+  height: 45px;
+  display: inline-block;
+  background-color: #A06FEF;
+  border: none;
+  border-radius: 50%;
+  color: #fff;
+  padding-top: 11px;
+  padding-left: 2px;
+  position: relative;
+}
+
+.next-button button[disabled] {
+  background-color: #DDDDDD;
+}
+
+.next-button button i {
+  position: absolute;
+  top: 15px;
+  left: 18px;
+
+}
+
+.next-button button:focus {
+  outline: none;
 }

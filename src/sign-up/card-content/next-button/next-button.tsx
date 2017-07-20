@@ -4,20 +4,18 @@ import { store } from '../../../store/root.store';
 import './next-button.css';
 
 // tslint:disable-next-line
-export class NextButton extends React.Component {
-    public changeView(): void {
-        store.dispatch({
-            type: 'NEXT_VIEW'
-        });
-    }
+export const NextButton = (props: { disabled: boolean }) => {
+  const changeView: () => void = (): void => {
+    store.dispatch({
+      type: 'NEXT_VIEW'
+    });
+  };
 
-    public render(): JSX.Element {
-        return (
-            <div className='next-button'>
-                <span onClick={this.changeView.bind(this)}>
+  return (
+    <div className='next-button'>
+                <button onClick={changeView} disabled={props.disabled}>
                     <i className='fa fa-arrow-right' aria-hidden='true'></i>
-                </span>
-            </div>
-        );
-    }
-}
+                </button>
+    </div>
+  );
+};
