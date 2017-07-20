@@ -16,8 +16,9 @@ export class Gender extends React.Component<{ update: React.EventHandler<any> }>
                             name='gender'
                             id='optionsRadios1'
                             value='male'
+                            onChange={this.props.update.bind(this)}
                         />
-                            Male
+                        Male
                     </label>
                 </div>
                 <div className='radio'>
@@ -28,8 +29,9 @@ export class Gender extends React.Component<{ update: React.EventHandler<any> }>
                             name='gender'
                             id='optionsRadios2'
                             value='female'
+                            onChange={this.props.update.bind(this)}
                         />
-                            Female
+                        Female
                     </label>
                 </div>
                 <NextButton />

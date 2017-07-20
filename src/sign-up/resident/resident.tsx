@@ -16,6 +16,7 @@ export class Resident extends React.Component<{ update: React.EventHandler<any> 
                             name='resident'
                             id='optionsRadios1'
                             value='true'
+                            onChange={this.props.update.bind(this)}
                         />
                         Yes
                     </label>
@@ -28,6 +29,7 @@ export class Resident extends React.Component<{ update: React.EventHandler<any> 
                             name='resident'
                             id='optionsRadios2'
                             value='false'
+                            onChange={this.props.update.bind(this)}
                         />
                         No
                     </label>

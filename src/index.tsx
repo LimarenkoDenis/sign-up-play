@@ -19,11 +19,8 @@ class App extends React.Component<{}, { currentView: number }> {
     public constructor() {
         super();
         // tslint:disable-next-line
-        this.state = { currentView: 1 }
-        store.subscribe(() => {
-            console.log(store.getState().dataReducer);
-            this.setState({ currentView: store.getState().viewReducer.viewIndex });
-        });
+        store.subscribe(() =>
+            this.setState({ currentView: store.getState().viewReducer.viewIndex }));
 
     }
 
