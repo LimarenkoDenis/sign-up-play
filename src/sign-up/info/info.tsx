@@ -1,9 +1,10 @@
 import * as React from 'react';
 
-import './info.css';
-
 import { Title } from '../title/title';
 import { NextButton } from '../next-button/next-button';
+
+import './info.css';
+
 
 // tslint:disable-next-line
 export class Info extends React.Component<{ update: React.EventHandler<any> }> {

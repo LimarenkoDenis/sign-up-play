@@ -8,6 +8,31 @@ export class Resident extends React.Component<{ update: React.EventHandler<any> 
         return (
             <div>
                 <Title title='Are you UK resident?' icon='fa fa-home' />
+                <div className='radio'>
+                    <label>
+                        <input
+                            className='btn btn-default'
+                            type='radio'
+                            name='resident'
+                            id='optionsRadios1'
+                            value='true'
+                        />
+                        Yes
+                    </label>
+                </div>
+                <div className='radio'>
+                    <label>
+                        <input
+                            className='btn btn-default'
+                            type='radio'
+                            name='resident'
+                            id='optionsRadios2'
+                            value='false'
+                        />
+                        No
+                    </label>
+                </div>
+
                 <NextButton />
             </div>
         );

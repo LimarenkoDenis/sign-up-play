@@ -1,7 +1,6 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-
 import './style.css';
 
 import { store } from './store/root.store';
@@ -61,7 +60,7 @@ class App extends React.Component<{}, { currentView: number }> {
                     <Header viewIndex={this.state.currentView} />
                     <div className='container-fluid sign-up-form' >
                         <CardHeader />
-                        <div className='container-fluid' >
+                        <div className='container-fluid form-container' >
                             {view}
                         </div>
                         <CardFooter />
