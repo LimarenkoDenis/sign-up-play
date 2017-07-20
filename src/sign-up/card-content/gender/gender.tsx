@@ -17,7 +17,8 @@ export const Gender = (props: { update: React.EventHandler<any> }) => {
                         value='male'
                         onChange={props.update}
                     />
-                    Male
+                    <span>Male</span>
+                    <i className='fa fa-mars' aria-hidden='true'></i>
                 </label>
                 <label className='btn btn-default'>
                     <input
@@ -27,8 +28,9 @@ export const Gender = (props: { update: React.EventHandler<any> }) => {
                         value='female'
                         onChange={props.update}
                     />
-                    Female
-                    </label>
+                    <span>Female</span>
+                    <i className='fa fa-venus' aria-hidden='true'></i>
+                </label>
             </div>
         </div>
     );

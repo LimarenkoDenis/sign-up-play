@@ -17,7 +17,7 @@ export const Resident = (props: { update: React.EventHandler<any> }) => {
                         value='true'
                         onChange={props.update}
                     />
-                    Yes
+                    <span>Yes</span>
                 </label>
                 <label className='btn btn-default'>
                     <input
@@ -27,7 +27,7 @@ export const Resident = (props: { update: React.EventHandler<any> }) => {
                         value='false'
                         onChange={props.update}
                     />
-                    No
+                    <span>No</span>
                     </label>
             </div>
         </div>

@@ -1,6 +1,20 @@
+.btn-group span {
+    color: #A06FEF;
+    font-size: 18px;
+}
+
 .btn-group .btn {
     display: block;
     float: none;
     clear: both;
     margin: 10px 0;
+    -webkit-border-radius: 18px !important;
+    -moz-border-radius: 18px !important;
+    border-radius: 18px !important;
+}
+
+.btn-group .fa {
+    color: #A06FEF;
+    float: right;
+    font-size: 18px;
 }

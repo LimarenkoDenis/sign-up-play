@@ -16,12 +16,12 @@ export const Info = (props: { update: React.EventHandler<any> }) => {
   return (
     <div>
       <Title title='Please tell us your name ...' icon='fa fa-id-card-o'/>
-      <select onChange={props.update} name='title' className='form-control'>
-        <option disabled selected> select your title</option>
-        {roles.map((item: string, i: number) => (<option key={i}>{item}</option>))}
-      </select>
-      <div>
-        <input type='text' className='form-control'
+      <div className='col-md-12'>
+          <select onChange={props.update} name='title' className='form-control'>
+              <option disabled selected> select your title</option>
+              {roles.map((item: string, i: number) => (<option key={i}>{item}</option>))}
+          </select>
+          <input type='text' className='form-control'
           placeholder='Name' name='name' onInput={props.update}/>
         <input type='text' className='form-control'
           placeholder='Surname' name='surname' onInput={props.update}/>

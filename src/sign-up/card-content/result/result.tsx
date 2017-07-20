@@ -10,9 +10,11 @@ export class Result extends React.Component<{}, { [key: string]: string | number
 
     public render(): JSX.Element {
         return (
-            <pre>
-                {JSON.stringify(this.state, null, 2)}
-            </pre>
+            <div  className='col-md-12'>
+                <pre>
+                    {JSON.stringify(this.state, null, 2)}
+                </pre>
+            </div>
         );
     }
 }
