@@ -3,3 +3,14 @@
 body {
     background-color: #F5F5F5
 }
+
+.sign-up-form{
+    width: 360px;
+    height: 400px;
+    background-color: #fff;
+    border-radius: 14px;
+    margin-top: 70px;
+    position: relative;
+    padding-left: 0px;
+    padding-right: 0px;
+}

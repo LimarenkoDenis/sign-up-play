@@ -1,5 +1,8 @@
 import * as React from 'react';
 
+
+import { Title } from '../title/title';
+
 // tslint:disable-next-line
 const Select:
     (props: { update: React.EventHandler<React.ChangeEvent<HTMLSelectElement>>, items: string[] }) => JSX.Element
@@ -28,6 +31,7 @@ export class Info extends React.Component<{
     public render(): JSX.Element {
         return (
             <div>
+                <Title title='Please tell us your name ...' icon='fa fa-id-card-o' />
                 <Select update={this.props.update} items={this.props.items} />
                 <Login />
             </div>
