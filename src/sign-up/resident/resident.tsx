@@ -2,7 +2,8 @@ import * as React from 'react';
 import { Title } from '../title/title';
 import { NextButton } from '../next-button/next-button';
 
-export class Resident extends React.Component {
+// tslint:disable-next-line
+export class Resident extends React.Component<{ update: React.EventHandler<any> }>{
     public render(): JSX.Element {
         return (
             <div>
@@ -12,7 +13,7 @@ export class Resident extends React.Component {
                         <input
                             className='btn btn-default'
                             type='radio'
-                            name='residentRadios'
+                            name='resident'
                             id='optionsRadios1'
                             value='true'
                         />
@@ -24,7 +25,7 @@ export class Resident extends React.Component {
                         <input
                             className='btn btn-default'
                             type='radio'
-                            name='residentRadios'
+                            name='resident'
                             id='optionsRadios2'
                             value='false'
                         />

@@ -3,43 +3,32 @@ import * as React from 'react';
 import { Title } from '../title/title';
 import { NextButton } from '../next-button/next-button';
 
-
-import { store } from '../../store/root.store';
-
 import './info.css';
 
 
-export class Info extends React.Component<{
-    items: string[]
-}> {
+// tslint:disable-next-line
+export class Info extends React.Component<{ update: React.EventHandler<any> }> {
 
-    public constructor() {
-        super();
-    }
-
-    public onChange(e: KeyboardEvent): void {
-        // tslint:disable-next-line
-        const el: any = e.target;
-        store.dispatch({
-            type: 'ADD_DATA',
-            payload: { [el.name]: el.value }
-        });
-    }
+    public roles: string[] = [
+        'Angular dev',
+        'React dev',
+        'Manager',
+    ];
 
     public render(): JSX.Element {
         return (
             <div>
                 <Title title='Please tell us your name ...' icon='fa fa-id-card-o' />
-                <select className='form-control' onChange={this.onChange.bind(this)} name='title'>
-                    {this.props.items.map((item: string, i: number) => (<option key={i}>{item}</option>))}
+                <select onChange={this.props.update.bind(this)} name='title' className='form-control' >
+                    <option disabled selected> select your title</option>
+                    {this.roles.map((item: string, i: number) => (<option key={i}>{item}</option>))}
                 </select>
-                <div>
-                    <div>
-                        <input className='form-control' type='text' name='name' onInput={this.onChange.bind(this)} />
-                    </div>
-                    <div>
-                        <input className='form-control' type='text' name='surname' onInput={this.onChange.bind(this)} />
-                    </div>
+                <div >
+                    <input type='text' className='form-control'
+                        placeholder='Name' name='name' onInput={this.props.update.bind(this)} />
+                    <input type='text' className='form-control'
+                        placeholder='Surname' name='surname' onInput={this.props.update.bind(this)} />
+
                 </div>
                 <NextButton />
             </div >

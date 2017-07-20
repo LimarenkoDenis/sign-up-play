@@ -2,7 +2,8 @@ import * as React from 'react';
 import { Title } from '../title/title';
 import { NextButton } from '../next-button/next-button';
 
-export class Gender extends React.Component {
+// tslint:disable-next-line
+export class Gender extends React.Component<{ update: React.EventHandler<any> }> {
     public render(): JSX.Element {
         return (
             <div>
@@ -12,7 +13,7 @@ export class Gender extends React.Component {
                         <input
                             className='btn btn-default'
                             type='radio'
-                            name='optionsRadios'
+                            name='gender'
                             id='optionsRadios1'
                             value='male'
                         />
@@ -24,7 +25,7 @@ export class Gender extends React.Component {
                         <input
                             className='btn btn-default'
                             type='radio'
-                            name='optionsRadios'
+                            name='gender'
                             id='optionsRadios2'
                             value='female'
                         />
