@@ -1,14 +1,9 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { createStore, Store } from 'redux';
-
-import { rootReducer } from './reducers';
 import './style.css';
 
-
-// tslint:disable-next-line
-const store: Store<any> = createStore(rootReducer, {});
+import { store } from './store/root.store';
 
 import { Header } from './header/header';
 import { Info } from './sign-up/info/info';
@@ -25,25 +20,22 @@ class App extends React.Component<{}, { currentView: number }> {
         super();
         // tslint:disable-next-line
         this.state = { currentView: 1 }
-        store.subscribe(() =>
-            this.setState({ currentView: store.getState().viewReducer.viewIndex }));
-    }
-
-    public update(e: React.ChangeEvent<HTMLSelectElement>): void {
-        console.log(e);
-    }
-
-    public changeView(): void {
-        store.dispatch({
-            type: 'NEXT_VIEW'
+        store.subscribe(() => {
+            console.log(store.getState().dataReducer);
+            this.setState({ currentView: store.getState().viewReducer.viewIndex });
         });
+
     }
+
+    // public update(e: React.ChangeEvent<HTMLSelectElement>): void {
+    //     console.log(e);
+    // }
 
     public render(): JSX.Element {
         let view: JSX.Element;
         switch (this.state.currentView) {
             case 1:
-                view = <Info update={this.update.bind(this)} items={['1', '2', '3', '4', '5']} />;
+                view = <Info items={['1', '2', '3', '4', '5']} />;
                 break;
             case 2:
                 view = <Gender />;
@@ -55,12 +47,8 @@ class App extends React.Component<{}, { currentView: number }> {
                 view = <Result />;
                 break;
             default:
-                view = <Info update={this.update.bind(this)} items={['1', '2', '3', '4', '5']} />;
+                view = <Info items={['1', '2', '3', '4', '5']} />;
         }
-        const button: JSX.Element = <button
-            className='btn btn-default'
-            onClick={this.changeView.bind(this)}
-        > Next View  </button>;
         return (
             <Provider store={store}>
                 <div>
@@ -69,7 +57,6 @@ class App extends React.Component<{}, { currentView: number }> {
                         <CardHeader />
                         <div className='container-fluid form-container' >
                             {view}
-                            {this.state.currentView < 4 ? button : ''}
                         </div>
                         <CardFooter />
                     </div>

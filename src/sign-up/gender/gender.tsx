@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Title } from '../title/title';
+import { NextButton } from '../next-button/next-button';
 
 export class Gender extends React.Component {
     public render(): JSX.Element {
@@ -8,16 +9,29 @@ export class Gender extends React.Component {
                 <Title title='Please tell us your gender ...' icon='fa fa-question-circle-o' />
                 <div className='radio'>
                     <label>
-                        <input className='btn btn-default' type='radio' name='optionsRadios' id='optionsRadios1' value='male' checked />
-                            male
+                        <input
+                            className='btn btn-default'
+                            type='radio'
+                            name='optionsRadios'
+                            id='optionsRadios1'
+                            value='male'
+                        />
+                            Male
                     </label>
                 </div>
                 <div className='radio'>
                     <label>
-                        <input className='btn btn-default' type='radio' name='optionsRadios' id='optionsRadios2' value='female' />
-                            female
+                        <input
+                            className='btn btn-default'
+                            type='radio'
+                            name='optionsRadios'
+                            id='optionsRadios2'
+                            value='female'
+                        />
+                            Female
                     </label>
                 </div>
+                <NextButton />
             </div>
         );
     }

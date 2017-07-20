@@ -1,0 +1,13 @@
+.next-button{
+ text-align: center;
+}
+.next-button span{
+    width: 45px;
+    height: 45px;
+    display: inline-block;
+    background-color: #DDDDDD;
+    border-radius: 50%;
+    color: #fff;
+    padding-top: 11px;
+    padding-left: 2px;
+}
