@@ -13,14 +13,15 @@ import { Result } from './sign-up/result/result';
 import { CardFooter } from './sign-up/card-footer/card-footer';
 import { CardHeader } from './sign-up/card-header/card-header';
 
-class App extends React.Component<{}, { currentView: number }> {
+class App extends React.Component<{}, { viewIndex: number }> {
 
 
     public constructor() {
         super();
+        this.state = store.getState().viewReducer;
         // tslint:disable-next-line
         store.subscribe(() =>
-            this.setState({ currentView: store.getState().viewReducer.viewIndex }));
+            this.setState({ viewIndex: store.getState().viewReducer.viewIndex }));
 
     }
 
@@ -35,7 +36,7 @@ class App extends React.Component<{}, { currentView: number }> {
 
     public render(): JSX.Element {
         let view: JSX.Element;
-        switch (this.state.currentView) {
+        switch (this.state.viewIndex) {
             case 1:
                 view = <Info update={this.onChange} />;
                 break;
@@ -54,7 +55,7 @@ class App extends React.Component<{}, { currentView: number }> {
         return (
             <Provider store={store}>
                 <div>
-                    <Header viewIndex={this.state.currentView} />
+                    <Header viewIndex={this.state.viewIndex} />
                     <div className='container-fluid sign-up-form' >
                         <CardHeader />
                         <div className='container-fluid form-container' >

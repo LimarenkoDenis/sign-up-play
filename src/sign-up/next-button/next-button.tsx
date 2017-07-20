@@ -4,9 +4,8 @@ import { store } from '../../store/root.store';
 import './next-button.css';
 
 // tslint:disable-next-line
-export class NextButton extends React.Component<{ [key: string]: string | boolean }, {}>{
+export class NextButton extends React.Component {
     public changeView(): void {
-        console.log(this.props);
         store.dispatch({
             type: 'NEXT_VIEW'
         });
