@@ -3,7 +3,10 @@ import * as ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore, Store } from 'redux';
 
+import CardHeader from './card-header/card-header';
+import CardFooter from './card-footer/card-footer';
 import { rootReducer } from './reducers';
+import './style.css';
 
 
 // tslint:disable-next-line
@@ -17,6 +20,22 @@ import { Gender } from './sign-up/gender/gender';
 import { Resident } from './sign-up/resident/resident';
 import { Result } from './sign-up/result/result';
 
+const style = {
+    header: {
+        padding: '20px 0',
+        backgroundColor: '#FFFFFF'
+
+    },
+    progresBar: {
+        height: '10px',
+        top: '10px',
+        backgroundColor: '#E7DCFD'
+    },
+    barStyle: {
+        width: '60%',
+        backgroundColor: '#A06FEF'
+    }
+}
 
 class App extends React.Component<{}, { currentView: number }> {
 
@@ -60,9 +79,23 @@ class App extends React.Component<{}, { currentView: number }> {
         const button: JSX.Element = <button onClick={this.changeView.bind(this)} > Next View  </button>;
         return (
             <Provider store={store}>
-                <div>
-                    {view}
-                    {this.state.currentView < 4 ? button : ''}
+                <div className='container-fluid'>
+                    <header className='row' style={style.header}>
+                        <div className='col-md-2'>
+                            <h2>Header</h2>
+                        </div>
+                        <div className='progress col-md-8' style={style.progresBar}>
+                            <div className='progress-bar' role='progressbar' aria-valuenow='60' aria-valuemin='0' aria-valuemax='100' style={style.barStyle}>
+                                <span className='sr-only'>60% Complete</span>
+                            </div>
+                        </div>
+                    </header>
+                    <div className='col-md-4'>
+                        <CardHeader />
+                        {view}
+                        {this.state.currentView < 4 ? button : ''}
+                        <CardFooter />
+                    </div>
                 </div>
             </Provider>
         );
