@@ -3,11 +3,13 @@ import * as React from 'react';
 
 import { Title } from '../title/title';
 
+import './info.css';
+
 // tslint:disable-next-line
 const Select:
     (props: { update: React.EventHandler<React.ChangeEvent<HTMLSelectElement>>, items: string[] }) => JSX.Element
     = (props: { update: React.EventHandler<React.ChangeEvent<HTMLSelectElement>>, items: string[] }) => (
-        <select onChange={props.update}>
+        <select className='form-control' onChange={props.update}>
             {props.items.map((item: string, i: number) => (<option key={i}>{item}</option>))}
         </select>
     );
@@ -15,10 +17,10 @@ const Select:
 const Login: () => JSX.Element = () => (
     <div>
         <div>
-            <input type='text' />
+            <input className='form-control' type='text' />
         </div>
         <div>
-            <input type='password' />
+            <input className='form-control' type='password' />
         </div>
     </div>
 );

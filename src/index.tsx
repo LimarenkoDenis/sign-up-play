@@ -3,9 +3,6 @@ import * as ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore, Store } from 'redux';
 
-import CardHeader from './card-header/card-header';
-import CardFooter from './card-footer/card-footer';
-
 import { rootReducer } from './reducers';
 import './style.css';
 
@@ -60,14 +57,17 @@ class App extends React.Component<{}, { currentView: number }> {
             default:
                 view = <Info update={this.update.bind(this)} items={['1', '2', '3', '4', '5']} />;
         }
-        const button: JSX.Element = <button onClick={this.changeView.bind(this)} > Next View  </button>;
+        const button: JSX.Element = <button
+            className='btn btn-default'
+            onClick={this.changeView.bind(this)}
+        > Next View  </button>;
         return (
             <Provider store={store}>
                 <div>
                     <Header viewIndex={this.state.currentView} />
                     <div className='container-fluid sign-up-form' >
                         <CardHeader />
-                        <div className='container-fluid' >
+                        <div className='container-fluid form-container' >
                             {view}
                             {this.state.currentView < 4 ? button : ''}
                         </div>
