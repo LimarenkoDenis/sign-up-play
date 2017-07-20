@@ -1,0 +1,13 @@
+.title{
+        text-align: center;
+}
+.title i {
+     color: #A06FEF;
+     font-size: 50px;
+}  
+.title span {
+    display: inline-block;
+    width:100%;
+    font-size: 20px;
+    font-weight: bold;
+}  
