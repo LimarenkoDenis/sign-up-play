@@ -53,7 +53,7 @@ export class SignUp extends React.Component<{ viewIndex: number }> {
       <div className='container-fluid sign-up-form'>
         <CardHeader/>
         <CardContent update={this.onChange} viewIndex={this.props.viewIndex}/>
-        <NextButton disabled={this.disabled}/>
+        {this.props.viewIndex < 4 ? <NextButton disabled={this.disabled}/> : ''}
         <CardFooter/>
       </div>
     );
