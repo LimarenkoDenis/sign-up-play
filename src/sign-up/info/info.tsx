@@ -1,6 +1,7 @@
-
-
 import * as React from 'react';
+
+import CardHeader from '../card-header/card-header';
+import CardFooter from '../card-footer/card-footer';
 
 // tslint:disable-next-line
 const Select:
@@ -13,12 +14,14 @@ const Select:
 // tslint:disable-next-line
 const Login: () => JSX.Element = () => (
     <div>
+        <CardHeader />
         <div>
             <input type='text' />
         </div>
         <div>
             <input type='password' />
         </div>
+        <CardFooter />
     </div>
 );
 
