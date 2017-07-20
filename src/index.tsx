@@ -28,27 +28,32 @@ class App extends React.Component<{}, { currentView: number }> {
 
     }
 
-    // public update(e: React.ChangeEvent<HTMLSelectElement>): void {
-    //     console.log(e);
-    // }
+    public onChange(e: KeyboardEvent): void {
+        // tslint:disable-next-line
+        const el: any = e.target;
+        store.dispatch({
+            type: 'ADD_DATA',
+            payload: { [el.name]: el.value }
+        });
+    }
 
     public render(): JSX.Element {
         let view: JSX.Element;
         switch (this.state.currentView) {
             case 1:
-                view = <Info items={['1', '2', '3', '4', '5']} />;
+                view = <Info update={this.onChange} />;
                 break;
             case 2:
-                view = <Gender />;
+                view = <Gender update={this.onChange} />;
                 break;
             case 3:
-                view = <Resident />;
+                view = <Resident update={this.onChange} />;
                 break;
             case 4:
                 view = <Result />;
                 break;
             default:
-                view = <Info items={['1', '2', '3', '4', '5']} />;
+                view = <Info update={this.onChange} />;
         }
         return (
             <Provider store={store}>
