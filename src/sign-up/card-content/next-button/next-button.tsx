@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { store } from '../../store/root.store';
+import { store } from '../../../store/root.store';
 
 import './next-button.css';
 

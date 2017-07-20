@@ -6,12 +6,8 @@ import './style.css';
 import { store } from './store/root.store';
 
 import { Header } from './header/header';
-import { Info } from './sign-up/info/info';
-import { Gender } from './sign-up/gender/gender';
-import { Resident } from './sign-up/resident/resident';
-import { Result } from './sign-up/result/result';
-import { CardFooter } from './sign-up/card-footer/card-footer';
-import { CardHeader } from './sign-up/card-header/card-header';
+import { SignUp } from './sign-up/sign-up';
+
 
 class App extends React.Component<{}, { viewIndex: number }> {
 
@@ -35,34 +31,11 @@ class App extends React.Component<{}, { viewIndex: number }> {
     }
 
     public render(): JSX.Element {
-        let view: JSX.Element;
-        switch (this.state.viewIndex) {
-            case 1:
-                view = <Info update={this.onChange} />;
-                break;
-            case 2:
-                view = <Gender update={this.onChange} />;
-                break;
-            case 3:
-                view = <Resident update={this.onChange} />;
-                break;
-            case 4:
-                view = <Result />;
-                break;
-            default:
-                view = <Info update={this.onChange} />;
-        }
         return (
             <Provider store={store}>
                 <div>
                     <Header viewIndex={this.state.viewIndex} />
-                    <div className='container-fluid sign-up-form' >
-                        <CardHeader />
-                        <div className='container-fluid form-container' >
-                            {view}
-                        </div>
-                        <CardFooter />
-                    </div>
+                    <SignUp viewIndex={this.state.viewIndex}/>
                 </div>
             </Provider>
         );
