@@ -1,15 +1,16 @@
 import * as React from 'react';
 import { Title } from '../title/title';
 
+import './resident.css';
+
 // tslint:disable-next-line
 export const Resident = (props: { update: React.EventHandler<any> }) => {
     return (
         <div>
             <Title title='Are you UK resident?' icon='fa fa-home' />
-            <div className='radio'>
-                <label>
+            <div className='btn-group col-md-12' data-toggle='buttons'>
+                <label className='btn btn-default'>
                     <input
-                        className='btn btn-default'
                         type='radio'
                         name='resident'
                         id='optionsRadios1'
@@ -17,12 +18,9 @@ export const Resident = (props: { update: React.EventHandler<any> }) => {
                         onChange={props.update}
                     />
                     Yes
-                    </label>
-            </div>
-            <div className='radio'>
-                <label>
+                </label>
+                <label className='btn btn-default'>
                     <input
-                        className='btn btn-default'
                         type='radio'
                         name='resident'
                         id='optionsRadios2'

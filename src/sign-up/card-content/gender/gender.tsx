@@ -1,15 +1,16 @@
 import * as React from 'react';
 import { Title } from '../title/title';
 
+import './gender.css';
+
 // tslint:disable-next-line
 export const Gender = (props: { update: React.EventHandler<any> }) => {
     return (
         <div>
             <Title title='Please tell us your gender ...' icon='fa fa-question-circle-o' />
-            <div className='radio'>
-                <label>
+            <div className='btn-group col-md-12' data-toggle='buttons'>
+                <label className='btn btn-default'>
                     <input
-                        className='btn btn-default'
                         type='radio'
                         name='gender'
                         id='optionsRadios1'
@@ -17,12 +18,9 @@ export const Gender = (props: { update: React.EventHandler<any> }) => {
                         onChange={props.update}
                     />
                     Male
-                    </label>
-            </div>
-            <div className='radio'>
-                <label>
+                </label>
+                <label className='btn btn-default'>
                     <input
-                        className='btn btn-default'
                         type='radio'
                         name='gender'
                         id='optionsRadios2'
