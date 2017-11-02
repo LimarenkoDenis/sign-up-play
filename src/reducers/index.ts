@@ -5,7 +5,7 @@ import { viewReducer } from './view.reducer';
 import { dataReducer } from './data.reducer';
 
 // tslint:disable-next-line
-export const rootReducer: Reducer<any> = combineReducers({
+export const rootReducer: Reducer<ModuleStore> = combineReducers({
     viewReducer,
     dataReducer
 });

@@ -1,6 +1,6 @@
 import { Reducer } from 'redux';
-
-type Data = {
+import { ADD_DATA } from '../actions/data';
+export type Data = {
   title: string,
   name: string,
   surname: string,
@@ -8,22 +8,21 @@ type Data = {
   resident: string
 };
 
-const initData: Data = {
+export const initData: Data = {
   title: '',
   name: '',
   surname: '',
   gender: '',
   resident: ''
 };
-
+type dataKey = keyof Data;
 
 export const dataReducer: Reducer<Data> =
   (
     state: Data = initData,
     // tslint:disable-next-line
-    action: { type: string, payload: any }
-  ): Data => {
-    if (action.type === 'ADD_DATA') {
+    action: { type: string, payload: { [key in dataKey]: string  }}): Data => {
+    if (action.type === ADD_DATA) {
       state = { ...state, ...action.payload };
     }
     return state;

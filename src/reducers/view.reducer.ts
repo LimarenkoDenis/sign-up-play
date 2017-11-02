@@ -1,12 +1,15 @@
 import { Reducer } from 'redux';
+import { NEXT_VIEW } from '../actions/data';
 
-export const viewReducer: Reducer<{ viewIndex: number }> =
+export type View = { viewIndex: number };
+
+export const viewReducer: Reducer<View> =
   (
-    state: { viewIndex: number } = { viewIndex: 1 },
-    action: { type: string, payload: any }
+    state: View = { viewIndex: 1 },
+    action: { type: string, payload: void }
   ): { viewIndex: number } => {
-    if (action.type === 'NEXT_VIEW' && state.viewIndex < 4) {
+    if (action.type === NEXT_VIEW && state.viewIndex < 4) {
       state.viewIndex = state.viewIndex + 1;
     }
-    return state;
+    return { ...state };
   };

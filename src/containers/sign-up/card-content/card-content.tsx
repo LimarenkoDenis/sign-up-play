@@ -6,9 +6,16 @@ import { Info } from './info/info';
 import { Gender } from './gender/gender';
 import { Resident } from './resident/resident';
 import { Result } from './result/result';
+import { Data } from '../../../reducers/data.reducer';
+
+export type Props = {
+    viewIndex: number;
+    data: Data;
+    update: (e: KeyboardEvent) => void;
+};
 
 // tslint:disable-next-line
-export const CardContent = (props: { viewIndex: number, update: any }) => {
+export const CardContent = (props: Props) => {
 
     let view: JSX.Element;
     switch (props.viewIndex) {
@@ -22,7 +29,7 @@ export const CardContent = (props: { viewIndex: number, update: any }) => {
             view = <Resident update={props.update} />;
             break;
         case 4:
-            view = <Result />;
+            view = <Result data={props.data} />;
             break;
         default:
             view = <Info update={props.update} />;

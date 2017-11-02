@@ -1,35 +1,33 @@
 import * as React from 'react';
 import { Title } from '../title/title';
 
-import './gender.css';
-
+import './resident.css';
+export type Props = { update: React.EventHandler<any> };
 // tslint:disable-next-line
-export const Gender = (props: { update: React.EventHandler<any> }) => {
+export const Resident = (props: Props) => {
     return (
         <div>
-            <Title title='Please tell us your gender ...' icon='fa fa-question-circle-o' />
+            <Title title='Are you UK resident?' icon='fa fa-home' />
             <div className='btn-group col-md-12' data-toggle='buttons'>
                 <label className='btn btn-default'>
                     <input
                         type='radio'
-                        name='gender'
+                        name='resident'
                         id='optionsRadios1'
-                        value='male'
+                        value='true'
                         onChange={props.update}
                     />
-                    <span>Male</span>
-                    <i className='fa fa-mars' aria-hidden='true'></i>
+                    <span>Yes</span>
                 </label>
                 <label className='btn btn-default'>
                     <input
                         type='radio'
-                        name='gender'
+                        name='resident'
                         id='optionsRadios2'
-                        value='female'
+                        value='false'
                         onChange={props.update}
                     />
-                    <span>Female</span>
-                    <i className='fa fa-venus' aria-hidden='true'></i>
+                    <span>No</span>
                 </label>
             </div>
         </div>
