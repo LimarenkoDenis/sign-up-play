@@ -4,7 +4,7 @@ import { Title } from '../title/title';
 
 import './info.css';
 
-export type Props = { update: React.EventHandler<any> };
+export type Props = { update: (e: React.FormEvent<HTMLInputElement | HTMLSelectElement>) => void };
 
 const roles: string[] = [
   'Angular dev',

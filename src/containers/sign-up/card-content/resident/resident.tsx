@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Title } from '../title/title';
 
 import './resident.css';
-export type Props = { update: React.EventHandler<any> };
+export type Props = { update: (e: React.ChangeEvent<HTMLInputElement>) => void };
 // tslint:disable-next-line
 export const Resident = (props: Props) => {
     return (
