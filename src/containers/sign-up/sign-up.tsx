@@ -17,7 +17,8 @@ export type Props = {
 // tslint:disable-next-line
 export class SignUp extends React.Component<Props> {
 
-  public onChange: (e: KeyboardEvent) => void = (e: KeyboardEvent): void => {
+  public onChange: (e: React.FormEvent<HTMLInputElement | HTMLSelectElement>) => void
+  = (e: React.FormEvent<HTMLInputElement | HTMLSelectElement>): void => {
     // tslint:disable-next-line
     const el: HTMLInputElement = e.target as HTMLInputElement;
     this.props.onChangeState({

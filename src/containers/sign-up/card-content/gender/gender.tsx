@@ -3,7 +3,7 @@ import * as React from 'react';
 import { Title } from '../title/title';
 import './gender.css';
 
-export type Props = { update: (e: React.ChangeEvent<HTMLInputElement>) => void };
+export type Props = { update: (e: React.FormEvent<HTMLInputElement>) => void };
 
 // tslint:disable-next-line
 export const Gender = (props: Props) => (
