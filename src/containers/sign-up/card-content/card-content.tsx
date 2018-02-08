@@ -11,7 +11,7 @@ import { Data } from '../../../reducers/data.reducer';
 export type Props = {
     viewIndex: number;
     data: Data;
-    update: (e: KeyboardEvent) => void;
+    update: (e: React.FormEvent<HTMLInputElement | HTMLSelectElement>) => void
 };
 
 // tslint:disable-next-line
