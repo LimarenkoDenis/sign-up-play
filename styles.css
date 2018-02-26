@@ -1,39 +1,4 @@
-@import url(https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css);body {
-    background-color: #F5F5F5
-}
-
-
-
-.progress{
-        height: 10px;
-        top: 10px;
-        background-color: #E7DCFD;
-        width: 100%;
-        padding: 0;
-}
-.progress-bar {
-       width: 60%;
-       background-color: #A06FEF;
-}header{
-    height: 50px;
-    padding: 10px 20%;
-    background-color: #fff;
-    margin-bottom: 10px;
-    box-shadow: 0 4px 2px -2px gray;
-}.sign-up-form{
-    width: 360px;
-    height: 420px;
-    background-color: #fff;
-    border-radius: 14px;
-    margin-top: 70px;
-    position: relative;
-    padding-left: 0px;
-    padding-right: 0px;
-}
-
-.form-container {
-    margin-bottom: 20px;
-}.next-button {
+@import url(https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css);.next-button {
   text-align: center;
 }
 
@@ -64,63 +29,105 @@
 .next-button button:focus {
   outline: none;
 }.footer{
-    position: absolute;
-    bottom: 0;
-    border-top: 1px solid grey;
-    width: 100%;
-    height: 45px;
-    text-align: center;
-    padding-top: 10px;
-}.header{
-    width: 100%;
-    height: 45px;
-    text-align: center;
-    padding-top: 10px;
-    background-color: #A06FEF;
-    color:#fff;
-    border-top-right-radius: 10px;
-    border-top-left-radius: 10px;
-    margin-bottom:10px
-}.title{
-    text-align: center;
-    margin-top: 20px;
-    margin-bottom: 20px;
+  position: absolute;
+  bottom: 0;
+  border-top: 1px solid grey;
+  width: 100%;
+  height: 45px;
+  text-align: center;
+  padding-top: 10px;
+}
+.header{
+  width: 100%;
+  height: 45px;
+  text-align: center;
+  padding-top: 10px;
+  background-color: #A06FEF;
+  color:#fff;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  margin-bottom:10px
+}
+.title{
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 .title i {
-     color: #A06FEF;
-     font-size: 50px;
-}  
+  color: #A06FEF;
+  font-size: 50px;
+}
 .title span {
-    margin-top: 10px;
-    display: inline-block;
-    width:100%;
-    font-size: 20px;
-    font-weight: bold;
-}  .form-control{
-    margin: 10px 0;
-}.btn-group span {
-    color: #A06FEF;
-    font-size: 18px;
+  margin-top: 10px;
+  display: inline-block;
+  width:100%;
+  font-size: 20px;
+  font-weight: bold;
+}
+.form-control{
+  margin: 10px 0;
+}
+.btn-group span {
+  color: #A06FEF;
+  font-size: 18px;
 }
 
 .btn-group .btn {
-    display: block;
-    float: none;
-    clear: both;
-    margin: 10px 0;
-    -webkit-border-radius: 18px !important;
-    -moz-border-radius: 18px !important;
-    border-radius: 18px !important;
+  display: block;
+  float: none;
+  clear: both;
+  margin: 10px 0;
+  -webkit-border-radius: 18px !important;
+  -moz-border-radius: 18px !important;
+  border-radius: 18px !important;
 }
 
 .btn-group .fa {
-    color: #A06FEF;
-    float: right;
-    font-size: 18px;
-}.btn-group .btn {
-    display: block;
-    float: none;
-    clear: both;
-    margin: 10px 0;
+  color: #A06FEF;
+  float: right;
+  font-size: 18px;
 }
+.btn-group .btn {
+  display: block;
+  float: none;
+  clear: both;
+  margin: 10px 0;
+}
+.sign-up-form{
+  width: 360px;
+  height: 420px;
+  background-color: #fff;
+  border-radius: 14px;
+  margin-top: 70px;
+  position: relative;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.form-container {
+  margin-bottom: 20px;
+}
+.progress{
+  height: 10px;
+  top: 10px;
+  background-color: #E7DCFD;
+  width: 100%;
+  padding: 0;
+}
+.progress-bar {
+  width: 60%;
+  background-color: #A06FEF;
+}
+header{
+  height: 50px;
+  padding: 10px 20%;
+  background-color: #fff;
+  margin-bottom: 10px;
+  box-shadow: 0 4px 2px -2px gray;
+}
+body {
+  background-color: #F5F5F5
+}
+
+
 /*# sourceMappingURL=styles.css.map*/
